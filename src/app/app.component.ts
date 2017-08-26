@@ -1,19 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import {Heroe} from './heroe';
-
-
-const LISTA_HEROES: Heroe[] = [
-  {identif: 1, nombre: 'Supersona'},
-  {identif: 2, nombre: 'Dr. Empanada'},
-  {identif: 3, nombre: 'Doña Gallina'},
-  {identif: 4, nombre: 'Puebloman'},
-  {identif: 5, nombre: 'Superpaisaman'},
-  {identif: 6, nombre: 'Capitán Chibchombia'},
-  {identif: 7, nombre: 'Ultrapato'},
-  {identif: 8, nombre: 'Condor Herido'},
-  {identif: 9, nombre: 'El Divino Niño'},
-  {identif: 10, nombre: 'Sagrado Corazón'}
-];
+import {HeroeService} from './heroe.service';
 
 @Component({
   selector: 'my-app',
@@ -76,14 +63,24 @@ const LISTA_HEROES: Heroe[] = [
       margin-right: .8em;
       border-radius: 4px 0 0 4px;
     }
-  `]
-    
+  `],
+  providers: [HeroeService]  
 })
 
-export class AppComponent  {
+export class AppComponent implements OnInit {
   titulo= 'Tour De Los Heroes';
-  heroes = LISTA_HEROES;
+  heroes: Heroe[];
+  //heroes = LISTA_HEROES;
   selectedHeroe: Heroe;
+  constructor(private heroeServicio: HeroeService){}
+  getHeroes(): void{
+    this.heroeServicio.getLISTA_HEROES().then(heroes => this.heroes = heroes);
+  }
+
+  ngOnInit(): void{
+    this.getHeroes();
+  }
+
   onSelect(hero: Heroe): void {
     this.selectedHeroe = hero
   }
