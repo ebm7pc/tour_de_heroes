@@ -1,14 +1,14 @@
-import {Heroe} from './heroe';
+import { Hero } from './hero';
 
-export const LISTA_HEROES: Heroe[] = [
-    {identif: 1, nombre: 'Supersona'},
-    {identif: 2, nombre: 'Dr. Empanada'},
-    {identif: 3, nombre: 'Doña Gallina'},
-    {identif: 4, nombre: 'Puebloman'},
-    {identif: 5, nombre: 'Superpaisaman'},
-    {identif: 6, nombre: 'Capitán Chibchombia'},
-    {identif: 7, nombre: 'Ultrapato'},
-    {identif: 8, nombre: 'Condor Herido'},
-    {identif: 9, nombre: 'El Divino Niño'},
-    {identif: 10, nombre: 'Sagrado Corazón'}
-  ];
+export const HEROES: Hero[] = [
+  { id: 1, name: 'Supersona' },
+  { id: 2, name: 'Dr. Empanada' },
+  { id: 3, name: 'Doña Gallina' },
+  { id: 4, name: 'Sagrado Corazón' },
+  { id: 5, name: 'Chirrete Silvador' },
+  { id: 6, name: 'Superpaisaman' },
+  { id: 7, name: 'Capitán Chibchombia' },
+  { id: 8, name: 'Ultrapato' },
+  { id: 9, name: 'Condor Herido' },
+  { id: 10, name: 'El Divino Niño' }
+];
