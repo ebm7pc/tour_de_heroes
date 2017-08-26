@@ -1,9 +1,6 @@
 import { Component } from '@angular/core';
+import {Heroe} from './heroe';
 
-export class Heroe {
-  identif: number;
-  nombre: string;
-}
 
 const LISTA_HEROES: Heroe[] = [
   {identif: 1, nombre: 'Supersona'},
@@ -28,13 +25,7 @@ const LISTA_HEROES: Heroe[] = [
       <span class="badge">{{hero.identif}}</span> {{hero.nombre}}
     </li>
   </ul>
-  <div *ngIf="selectedHeroe">    
-    <h2>Detalles de {{selectedHeroe.nombre}}!</h2>
-    <div><label>Identificación: </label>{{selectedHeroe.identif}}</div>
-    <div>
-      <label>Nombre: </label><input [(ngModel)]="selectedHeroe.nombre" placeholder="nombre">
-    </div>
-  </div>
+  <detalle-de-heroe [hero]="selectedHeroe"></detalle-de-heroe>
     `,
 
     styles: [`
@@ -97,3 +88,5 @@ export class AppComponent  {
     this.selectedHeroe = hero
   }
   };
+
+  
