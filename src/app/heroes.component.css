@@ -6,14 +6,14 @@
   margin: 0 0 2em 0;
   list-style-type: none;
   padding: 0;
-  width: 15em;
+  width: 20em;
 }
 .heroes li {
   cursor: pointer;
   position: relative;
   left: 0;
   background-color: #EEE;
-  margin: .5em;
+  margin: auto;
   padding: .3em 0;
   height: 1.6em;
   border-radius: 4px;
@@ -56,4 +56,11 @@ button {
 }
 button:hover {
   background-color: #cfd8dc;
+}
+button.delete {
+  float:right;
+  margin-top: 2px;
+  margin-right: .8em;
+  background-color: gray !important;
+  color:white;
 }
